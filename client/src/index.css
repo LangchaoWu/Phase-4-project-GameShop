@@ -11,3 +11,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.fa-solid{
+  height: 40px;
+  width: 60px;
+}
+
+.fa-solid:hover{
+  color: orange;
+}
