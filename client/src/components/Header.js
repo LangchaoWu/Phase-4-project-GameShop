@@ -2,17 +2,18 @@ import React,{useState }from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser, faUserPen,faBars, faArrowRightFromBracket, faCartShopping, faGamepad} from '@fortawesome/free-solid-svg-icons'
 import { NavLink,Link } from 'react-router-dom'
-
+import { useNavigate} from 'react-router-dom'
 
 
 
 function Header({isLogin,isAdmin}) {
+    const navigate=useNavigate()
 const [menuBarToggle,setMenuBarToggle]=useState(false)
   return (
     <nav className='nav-container'>
         <FontAwesomeIcon className="menubars" icon={faBars} onClick={()=>setMenuBarToggle(menuBarToggle=> !menuBarToggle)}/>
-        <div className='logo'>
-            <FontAwesomeIcon className='fa-solid' icon={faGamepad}/>
+        <div className='logo' onClick={()=>{ navigate("/home") }}>
+            <FontAwesomeIcon className='game-icon' icon={faGamepad}/>
             <h1>GameShop</h1>
         </div>
        {menuBarToggle?
