@@ -1,14 +1,24 @@
 import React,{useState }from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser, faUserPen,faBars, faArrowRightFromBracket, faCartShopping, faGamepad} from '@fortawesome/free-solid-svg-icons'
-import { NavLink,Link } from 'react-router-dom'
+import { NavLink} from 'react-router-dom'
 import { useNavigate} from 'react-router-dom'
 
 
 
-function Header({isLogin,isAdmin}) {
+function Header({isLogin,setIsLogin,isAdmin,setIsAdmin,currentUser,setCurrentUser}) {
     const navigate=useNavigate()
-const [menuBarToggle,setMenuBarToggle]=useState(false)
+    const [menuBarToggle,setMenuBarToggle]=useState(false)
+    const logout = () => {
+        fetch('/logout',{
+            method:'DELETE'
+        })
+        .then(()=>{
+            setIsLogin(false)
+            setCurrentUser({})
+            setIsAdmin(false)
+        })
+    }
   return (
     <nav className='nav-container'>
         <FontAwesomeIcon className="menubars" icon={faBars} onClick={()=>setMenuBarToggle(menuBarToggle=> !menuBarToggle)}/>
@@ -19,25 +29,29 @@ const [menuBarToggle,setMenuBarToggle]=useState(false)
        {menuBarToggle?
        <div className='nav-links-active'>
            <NavLink to="/home" className="nav-link-text"><h2 className='nav-link-text'>Home</h2></NavLink>
-           <h2 className='nav-link-text'>PlayStation</h2>
-           <h2 className='nav-link-text'>Xbox</h2>
-           <h2 className='nav-link-text'>Nintendo Switch</h2>
+           <NavLink to="/PlayStation" className="nav-link-text"><h2 className='nav-link-text'>PlayStation</h2></NavLink>
+           <NavLink to="/Xbox" className="nav-link-text"><h2 className='nav-link-text'>Xbox</h2></NavLink>
+           <NavLink to="/NintendoSwitch" className="nav-link-text"><h2 className='nav-link-text'>Nintendo Switch</h2></NavLink>
        </div> 
         :
        <div className='nav-links'>
            <NavLink to="/home" className="nav-link-text"><h2 className='nav-link-text'>Home</h2></NavLink>
-           <h2>PlayStation</h2>
-           <h2>Xbox</h2>
-           <h2>Nintendo Switch</h2>
+           <NavLink to="/PlayStation" className="nav-link-text"><h2 className='nav-link-text'>PlayStation</h2></NavLink>
+           <NavLink to="/Xbox" className="nav-link-text"><h2 className='nav-link-text'>Xbox</h2></NavLink>
+           <NavLink to="/NintendoSwitch" className="nav-link-text"><h2 className='nav-link-text'>Nintendo Switch</h2></NavLink>
        </div>
         }
         <div className='icons'>
             {isAdmin?<FontAwesomeIcon className='fa-solid' icon={faUserPen}/>:null}
-            {isLogin? <div className='user-name'><span>Hi,  </span></div> :null}
+            {isLogin? <div className='user-name'><span>Hi,  {currentUser.username}</span></div> :null}
 
             {!isLogin ? <NavLink to="/login" className="Nav-link"><FontAwesomeIcon className='fa-solid' icon={faUser} /></NavLink>:
-            <FontAwesomeIcon className='fa-solid' icon={faArrowRightFromBracket} /> }
-            <FontAwesomeIcon className='fa-solid' icon={faCartShopping} />
+            <FontAwesomeIcon className='fa-solid' icon={faArrowRightFromBracket} onClick={logout} /> }
+            <div className='cart-container'>
+            <span className='num'>6</span>
+            <FontAwesomeIcon className='cart' icon={faCartShopping} />
+            </div>
+            
         </div>
 
 

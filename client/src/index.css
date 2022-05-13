@@ -23,6 +23,7 @@ body {
   justify-content: space-between;
   box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1) ;
   height: 2rem;
+ 
 }
 
 .menubars{
@@ -37,6 +38,8 @@ body {
 nav .logo{
   display: flex;
   align-items: center;
+  cursor: pointer;
+  
 }
 
 nav .logo:active{
@@ -110,8 +113,29 @@ nav .nav-links-active h2{
   color: orange;
 }
 
-
-
+.cart{
+  height: 40px;
+  width: 60px;
+  color: black;
+  cursor: pointer;
+ 
+}
+.cart:hover{
+  color:orange
+}
+.cart-container{
+  position: relative;
+}
+.num{
+  position: absolute;
+  top:-15px;
+  right:0px;
+  text-align: center;
+  text-shadow: 0 1px rgba(0,0,0,0.2);
+  background:#e23442;
+  border: 5px solid #e23442;
+  border-radius: 50%;
+}
 
 
 
@@ -138,9 +162,12 @@ nav .nav-links-active h2{
   .nav-container{
     position: fixed;
   top:0;left:0;right:0;
+  
   }
 
   nav .nav-links{
+    z-index: 1000;
+    
     position: absolute;
     top:100%; left: -120%;
     width: 20%;
@@ -161,6 +188,8 @@ nav .nav-links-active h2{
     text-align: center;
     border: 0.1rem solid;
     padding: 0.5rem;
+    z-index: 1000;
+    background-color: #dae6e7;
   }
   nav .nav-links-active h2{
     font-size: 0.5rem;
@@ -251,6 +280,10 @@ nav .nav-links-active h2{
   text-align: center;
   color: red;
 }
+.login-container .error-message{
+  text-align: center;
+  color: red;
+}
 
 .login-container .Sign-up-link{
   text-align: center;
@@ -338,6 +371,11 @@ nav .nav-links-active h2{
 }
 
 .create-container p{
+  text-align: center;
+  color: red;
+}
+.create-container .error-message{
+  margin-top: 3px;
   text-align: center;
   color: red;
 }
@@ -435,6 +473,7 @@ nav .nav-links-active h2{
   position: absolute;
   left: 1000px;
   bottom: 100px;
+  cursor: pointer;
 }
 .shop-now-btn:active{
   transform: translateY(5px);
@@ -539,3 +578,303 @@ nav .nav-links-active h2{
     line-height: 88px;
   }
 }
+
+/* .page-container{
+  
+} */
+/* Search bar starts here  */
+.search{
+  height: 50px;
+  width: 40%;
+  display: flex;
+  margin: 20px;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  /* border-bottom: #e23442; */
+  
+  }
+  
+  .search .search-icon{
+  
+    font-size: 2rem;
+    color: #6c6f70;
+  
+  }
+  
+  .search .search-icon img{
+    width: 100%;
+    height: 100%;
+  }
+  
+  
+  .search input{
+    margin-left: 5px;
+    width: 600px;
+    height: 40px;
+    border: none;
+    border-color: transparent;
+    font-size: 25px;
+    box-shadow: 3px 1px 5px rgb(165, 152, 152);
+  }
+  
+  .sort{
+    display: flex;
+    margin-left: 100px;
+    font-size: 20px;
+    
+  }
+  .sort label{
+    width: 80px;
+    padding: 5px;
+  }
+  .sort .sortList{
+    margin-left: 10px;
+    font-size: 1.5rem;
+    padding: 5px;
+    height: 3rem;
+    
+  }
+
+  .games-container{
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex: 0 0 33.3333%;
+    gap: 1.5rem;
+    border: .1rem solid rgba(0,0,0,0.1);
+    border-radius: 0.5rem;
+    /* background-color: #00E6F6; */
+    height: 95vh;
+    width: 60%;
+    /* margin: auto; */
+    padding: 2rem;
+    /* justify-content: center; */
+    /* align-items: center; */
+    text-align: center;
+    
+    /* overflow-y: scroll; */
+    
+  }
+  .pagination{
+    height: 10vh;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+  }
+
+  .card-container{
+    border: .1rem solid rgba(0,0,0,0.1);
+    border-radius: 0.5rem;
+    background-color: #faf3f3;
+    width: 20rem;
+    height: 35rem;
+    margin: 0.5rem 0;
+    font-size: 1.2rem;
+    position: relative;
+    margin-left: 28px;
+  }
+
+  .image-container{
+    width: 100%;
+    height: 65%;
+  }
+
+  .image-container img{
+    width: 100%;
+    height: 100%;
+  }
+  
+
+  .card-content{
+    height: 25%;
+  }
+  .card-name{
+    height: 50%;
+  }
+  .card-price{
+    height: 50%;
+  }
+  .card-btn{
+    width: 60px;
+    position: absolute;
+    right: 0;
+    /* display: block; */
+  }
+
+  /* .card-container:hover .card-btn{
+    /* display: block; */
+  
+   
+  .add-btn{
+    font-size: 1.8rem;
+    color:red;
+  }
+  .add-btn:hover{
+    color:rgb(231, 163, 61);
+  }
+  .add-btn:active{
+    transform: translateY(2px);
+  }
+  
+  .pagination-container{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    
+    
+  }
+  .pagination-arrow{
+    font-size: 1.5rem;
+    margin: 1rem;
+    width: 2rem;
+    
+  }
+  .page-number{
+    font-size: 1.5rem;
+    margin: 1rem;
+    width: 2rem;
+  }
+  .page-number-active{
+    font-size: 1.5rem;
+    margin: 1rem;
+    width: 2rem;
+    color: #e23442;
+  }
+
+
+  /* game detail start here  */
+  .detail-container-2{
+    width:75%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .game-detail-section{
+    width: 65%;
+    /* display: flex;
+    flex-wrap: wrap; */
+  }
+
+  .game-image-section{
+    /* margin: auto; */
+    position: relative;
+    margin-top: 60px;
+    width: 100%;
+    background-color: #f2f7f8;
+  }
+  .game-main-image{
+    margin: auto;
+    height: 600px ;
+    width:950px;
+    /* border: 4mm ridge rgba(211, 220, 50, .6); */
+    border: 4mm ridge rgba(227, 230, 187, 0.6);
+
+  }
+
+  .game-main-image img{
+    height: 100%;
+    width: 100%;
+  }
+  .game-feature-image{
+    position: absolute;
+    top: 100px;
+    left: 0;
+    height: 460px;
+    width:160px;
+    display: block;
+    overflow-Y: scroll;
+   
+    /* overflow:hidden; */
+  }
+  .game-feature-image::-webkit-scrollbar {
+    display: none;
+  }
+  .game-image-slide{
+    /* border: thick double #32a1ce; */
+  }
+  .game-feature-image img{
+     height: 100px ;
+      width:100px;
+      border: thick double #32a1ce;
+      /* opacity: 0.9; */
+  }
+  .game-feature-section {
+    margin-top: 40px;
+    text-align: left;
+    
+  }
+  .game-feature-section li{
+    font-size: 1.3rem;
+    padding: 5px;
+  }
+
+  .game-text-section{
+    width: 35%;
+  }
+  .game-name-price{
+    margin-top: 60px;
+    margin-left: 15px;
+    text-align: left;
+  }
+
+  .game-name-price h2{
+    color: red;
+    font-size: 2rem;
+  }
+
+  .add-button-to-cart{
+    margin-top: 400px;
+  
+  }
+  .add-button-to-cart button{
+    background-color: red;
+    color: white;
+    font-size: 2rem;
+    height: 60px;
+  }
+  .add-button-to-cart button:hover{
+    background-color: rgb(224, 24, 24);
+    box-shadow: 0px 0px 15px 0px rgba(250,60,60,1);
+  }
+  .add-button-to-cart button:active{
+    transform: translateY(5px);
+  }
+
+  .delivery{
+    width: 100%;
+    margin-top: 80px;
+    border: 1px solid #ccc;
+  }
+  .ship-info{
+    display: flex;
+    flex-wrap: nowrap;
+    /* align-items: left; */
+    /* text-align: left; */
+    padding: 0.6rem;
+    margin-left: 5px;
+  }
+  .truck-icon{
+    width: 40px;
+    height: 40px;
+  }
+  .ship-content{
+    margin-left: 10px;
+    text-align: left;
+  }
+  .ship-content span{
+    line-height: 1.6;
+  }
+  .free-shipping{
+    
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  .free-ship-order{
+    font-size: 1.2rem;
+    font-weight: 400;
+  }
+  .arrive-time{
+    font-size: 1.2rem;
+  }
