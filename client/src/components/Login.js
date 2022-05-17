@@ -1,6 +1,6 @@
 import React, {useState}  from 'react'
 import { Link,useNavigate} from 'react-router-dom'
-function Login({setCurrentUser,setIsLogin,setIsAdmin}) {
+function Login({setCurrentUser,setIsLogin,setIsAdmin,setCarts}) {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const navigate=useNavigate()
@@ -28,6 +28,7 @@ function Login({setCurrentUser,setIsLogin,setIsAdmin}) {
           }
           setCurrentUser(user)
            setIsLogin(true)
+           setCarts(user.carts)
            navigate("/home")
         })
         

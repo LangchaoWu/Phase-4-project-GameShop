@@ -1,9 +1,14 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCartPlus} from '@fortawesome/free-solid-svg-icons'
+import { faCartPlus,faPenToSquare} from '@fortawesome/free-solid-svg-icons'
+// import { faPenToSquare} from '@fortawesome/free-regular-svg-icons'
 import { useNavigate} from 'react-router-dom'
-function Game({game}) {
+function Game({game,isAdmin}) {
     const navigate=useNavigate()
+  function handleUpdate(e){
+    e.stopPropagation();
+    navigate(`/update/${game.id}`)
+  }
   return (
     <div className='card-container' onClick={()=> navigate(`/games/${game.id}`)}>
         <div className='image-container'>
@@ -15,7 +20,8 @@ function Game({game}) {
             <p className='card-price'>${game.price}</p>
         </div>
         <div className='card-btn'>
-        <FontAwesomeIcon className='add-btn' icon={faCartPlus} />
+          {isAdmin? <FontAwesomeIcon className="admin-edit" icon={faPenToSquare} onClick={handleUpdate}/> :null}
+            <FontAwesomeIcon className='add-btn' icon={faCartPlus} />
         </div>
     </div>
   )

@@ -43,6 +43,12 @@ class UsersController < ApplicationController
         head :no_content
     end
 
+    def delete_carts
+        user = User.find_by(id:params[:id])
+        user.carts.destroy_all
+        head :no_content
+    end
+
     private 
 
     def user_params

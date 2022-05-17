@@ -22,6 +22,16 @@ class GamesController < ApplicationController
         end    
     end
 
+    def update
+        game = Game.find_by(id:params[:id])
+        if game
+             game.update(game_params)
+            render json: game, status: :created
+        else
+            render json:{error:" game not found"}, status: :not_found
+        end
+    end
+
     def destroy
         game = Game.find_by(id:params[:id])
         if game

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :games
   resources :users
 
+  delete '/carts_delete/:id', to: 'users#delete_carts'
   post '/login', to: 'sessions#login'
   delete '/logout', to: 'sessions#logout'
   get '/authorized_user', to: 'sessions#get_current_user'

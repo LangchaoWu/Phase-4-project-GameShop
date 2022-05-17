@@ -3,5 +3,5 @@ class GameSerializer < ActiveModel::Serializer
   has_many :images
   has_many :features
   has_many :reviews
- 
+  
 end

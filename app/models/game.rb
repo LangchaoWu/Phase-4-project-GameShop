@@ -3,8 +3,8 @@ class Game < ApplicationRecord
     has_many :users, through: :reviews,dependent: :destroy
     has_many :carts,dependent: :destroy
     has_many :users,through: :carts,dependent: :destroy
-    has_many :images
-    has_many :features
+    has_many :images,dependent: :destroy
+    has_many :features,dependent: :destroy
 
     validates :name, presence: true, uniqueness: true
     validates :image, presence: true

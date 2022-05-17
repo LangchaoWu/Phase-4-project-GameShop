@@ -6,7 +6,7 @@ import { useNavigate} from 'react-router-dom'
 
 
 
-function Header({isLogin,setIsLogin,isAdmin,setIsAdmin,currentUser,setCurrentUser}) {
+function Header({isLogin,setIsLogin,isAdmin,setIsAdmin,currentUser,setCurrentUser,carts}) {
     const navigate=useNavigate()
     const [menuBarToggle,setMenuBarToggle]=useState(false)
     const logout = () => {
@@ -42,21 +42,22 @@ function Header({isLogin,setIsLogin,isAdmin,setIsAdmin,currentUser,setCurrentUse
        </div>
         }
         <div className='icons'>
-            {isAdmin?<FontAwesomeIcon className='fa-solid' icon={faUserPen}/>:null}
+            {isAdmin?<FontAwesomeIcon className='fa-solid' icon={faUserPen} onClick={ ()=> navigate("/admin")}/>:null}
             {isLogin? <div className='user-name'><span>Hi,  {currentUser.username}</span></div> :null}
 
             {!isLogin ? <NavLink to="/login" className="Nav-link"><FontAwesomeIcon className='fa-solid' icon={faUser} /></NavLink>:
             <FontAwesomeIcon className='fa-solid' icon={faArrowRightFromBracket} onClick={logout} /> }
             <div className='cart-container'>
-            <span className='num'>6</span>
-            <FontAwesomeIcon className='cart' icon={faCartShopping} />
+            {carts.length===0? null:<span className='num'>{carts.length}</span>}
+            <FontAwesomeIcon className='cart' icon={faCartShopping} onClick={()=> navigate("/cart")}/>
             </div>
             
         </div>
 
-
+        
     </nav>
   )
 }
 
 export default Header
+

@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import Game from './Game';
 import SearchBar from './SearchBar';
 import Pagination from './Pagination'
-function NintendoSwitch({games}) {
+function NintendoSwitch({games,isAdmin}) {
   const [currentPage,setCurrentPage]=useState(1)
   // const [gamesPerPage,setGamesPerPage]=useState(8)
   const gamesPerPage=8;
@@ -60,7 +60,7 @@ function NintendoSwitch({games}) {
       </div>
       <div className='games-container'>
           
-      {isSort? currentGames2.map(game=><Game key={game.id} game={game}/>) : currentGames.map(game=><Game key={game.id} game={game}/>)}
+      {isSort? currentGames2.map(game=><Game key={game.id} game={game}/>) : currentGames.map(game=><Game key={game.id} game={game} isAdmin={isAdmin}/>)}
           
 
       </div>
