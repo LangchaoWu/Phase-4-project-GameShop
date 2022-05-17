@@ -25,7 +25,7 @@ function App() {
   const [carts,setCarts]=useState([])
   
   useEffect(()=>{
-    fetch('/authorized_user')
+    fetch('api/authorized_user')
     .then(res=>res.json())   
     .then((user) => {
          if(user){
@@ -42,7 +42,7 @@ function App() {
       
     
 
-    fetch("/games")
+    fetch("api/games")
     .then(res=>res.json())
     .then(games=>{
       setGames(games);
