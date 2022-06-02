@@ -44,7 +44,7 @@ function UpdatePage({games,setGames}) {
              headers:{
             "Content-type":"application/json"
         },
-        body:JSON.stringify(updatedGame)
+        body:JSON.stringify({updatedGame})
          })
         .then(res=>res.json())
         .then(data => {

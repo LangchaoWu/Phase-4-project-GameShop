@@ -13,6 +13,7 @@ import Detail from './components/Detail';
 import Admin from './components/Admin';
 import UpdatePage from './components/UpdatePage';
 import Cart from './components/Cart';
+import { useNavigate} from 'react-router-dom'
 
 function App() {
   const [isLogin,setIsLogin]=useState(false)
@@ -23,7 +24,7 @@ function App() {
   // const [nsGames,setNSGames]=useState([])
   const [currentUser,setCurrentUser]=useState({})
   const [carts,setCarts]=useState([])
-  
+  const navigate=useNavigate()
   useEffect(()=>{
     fetch('/authorized_user')
     .then(res=>res.json())   
@@ -37,6 +38,7 @@ function App() {
             setIsAdmin(true)
           }
         }
+       
           
         });
       
@@ -53,6 +55,8 @@ function App() {
       // const newNS=games.filter(game=>game.game_type==="ns");
       // setNSGames(newNS);
     })
+
+    navigate("/home")
   },[])
   
   const psGames=games.filter(game=>game.game_type==="PS5");

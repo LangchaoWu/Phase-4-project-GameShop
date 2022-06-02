@@ -49,7 +49,7 @@ nav .logo:active{
 }
 nav h1{
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  font-size: 2rem
+  font-size: 1.5rem
 }
 
 nav .nav-links{
@@ -394,7 +394,7 @@ nav .nav-links-active h2{
 /* -------------------------- */
 /* home slide image  */
 .image-slider-container{
-  margin-top: 1%;
+  margin-top: 5%;
   align-items: center;
   /* justify-content: center; */
   display: flex;
@@ -402,8 +402,8 @@ nav .nav-links-active h2{
 
 .slide.active{
   margin: auto;
-  width: 1280px;
-  height: 720px;
+  width: 1000px;
+  height: 600px;
 }
 
 
@@ -413,15 +413,15 @@ nav .nav-links-active h2{
 .slide-image{
   /* width: 100%;
   height: 100%; */
-  width: 1280px;
-  height: 720px;
+  width: 1000px;
+  height: 600px;
 }
 
 /*  */
 
 .slide-left-arrow{
   
-  margin-left: 18%;
+  margin-left: 15%;
   font-size: 8rem;
   color: #c5dadf;
 
@@ -473,7 +473,7 @@ nav .nav-links-active h2{
 } */
 .shop-now-btn{
   position: absolute;
-  left: 1000px;
+  left: 750px;
   bottom: 100px;
   cursor: pointer;
 }
@@ -797,9 +797,9 @@ nav .nav-links-active h2{
   .add-form{
     position: absolute;
     right: 10%;
-    bottom: -10%;
+    bottom: -12%;
     z-index: 1000px;
-    width: 1000px;
+    width: 800px;
    
   }
   .add-img-form{
@@ -816,7 +816,7 @@ nav .nav-links-active h2{
   .add-img-form input {
     border: .1rem solid rgba(47, 116, 61, 0.1);
     font-size: 1.5rem;
-    width: 1000px;
+    width: 600px;
   }
   .add-img-form button{
     width: 150px;
@@ -829,8 +829,8 @@ nav .nav-links-active h2{
 
   .game-main-image{
     margin: auto;
-    height: 600px ;
-    width:950px;
+    height: 400px ;
+    width:650px;
     /* border: 4mm ridge rgba(211, 220, 50, .6); */
     border: 4mm ridge rgba(227, 230, 187, 0.6);
     position: relative;
@@ -853,9 +853,9 @@ nav .nav-links-active h2{
   }
   .game-feature-image{
     position: absolute;
-    top: 100px;
+    top: 70px;
     left: 0;
-    height: 480px;
+    height: 300px;
     width:160px;
     display: block;
     overflow-Y: scroll;
@@ -869,8 +869,8 @@ nav .nav-links-active h2{
     /* border: thick double #32a1ce; */
   }
   .game-feature-image img{
-     height: 100px ;
-      width:100px;
+     height: 80px ;
+      width:80px;
       border: thick double #32a1ce;
       /* opacity: 0.9; */
   }

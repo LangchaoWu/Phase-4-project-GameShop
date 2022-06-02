@@ -42,7 +42,7 @@ class GamesController < ApplicationController
         end
         
     end
-
+    private
     def game_params
         params.permit(:name, :price, :image, :game_type)
     end
